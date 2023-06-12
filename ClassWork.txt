@@ -1,0 +1,801 @@
+   Arithmatic operators
+   Logical Operator
+   Relational Operator
+   Bitwise Operator- Bitwise AND, Bitwise OR, Bitwise XOR, Bitwise Leftshift, Rightshift
+
+1)Write a Java Program to find out the discriminant of a Quadratic equation.
+
+class Disc
+{
+public static void main(String args[])
+{
+  Scanner obj=new Scanner(System.in);
+  int a,b,c,d;
+  a=obj.nextInt();
+  b=obj.nextInt();
+  c=obj.nextInt();
+  d=b*b-(4*a*c);
+  System.out.println(d);
+   }
+}
+
+
+     a=2   0 1 0 
+     b=7   1 1 1     a&b
+         ----------
+           0 1 0
+
+
+         1 1 1
+         0 0 0   a| b
+       -----------
+         1 1 1
+
+
+      a   1 1 0     a>>2     1 1 0      0 1 1      1 0 1  
+          1 1 0    a<<2      1 1 0      1 0 1      0 1 1
+        __________
+    
+
+2) Write a Java Program to calculate area of a triangle:
+
+Type conversion:
+
+2) Class Traingle
+{
+public static void main(String args[])
+{
+ int b=5,h=7;
+ int area;
+ area= (double)1/2*(b*h);
+ System.out.println('Area is'+area);
+}
+}
+
+
+3) a=5; Write a Java program to apply a>>2 for the given value and write the output:
+
+      1  0  1     1 1 0 = 6
+
+    a=12     a<<2.
+
+simple if..
+---------
+
+1) class Simple1
+{
+ public static void main(String args[])
+{
+   int a=10, b=50;
+   if(a>b)
+   {
+    System.out.println('A is bigger');
+  }
+}
+}
+ 
+if - else:
+------------
+import java.util.*;
+class Simple2
+{
+ public static void main(String args[])
+{
+   Scanner obj=new Scanner(System.in);
+   int a,b;
+   a=obj.nextInt();
+   b=obj.netxInt();
+   if(a>b)
+   {
+    System.out.println('A is bigger');
+  }
+   else
+    {
+    System.out.println('B is bigger');
+  }
+}
+}
+////     
+
+
+22-02-20222
+
+Nested-if:
+
+class GFG
+{  
+    public static void main(String args[])
+    {
+        int a=10;
+          int b=20;
+       
+        if(a==10){
+            if(b==20){
+                System.out.println("GeeksforGeeks");
+            else
+               System.out.println("None");
+            }
+        else
+          System.out.println("a is not equal to 10");
+        }
+    }
+}
+
+ Write a Java program to find largest number among 3 numbers using Nested-if.
+
+
+
+Looping Statements:    For loop, while loop, do--while loop
+
+class PrintNumbers
+{
+    public static void main(String[] args)
+    {
+        for(int i=1; i<=10; i++)       for (initialization;condition;increment / decrement) 
+        {
+            System.out.println(i);
+        }
+    }
+}
+------------------------------------------------------
+
+class SumNumbers
+{
+    public static void main(String[] args)
+    {
+        int sum = 0;
+        for(int i=1; i<=10; i++)
+        {
+            sum += i;
+        }
+        System.out.println("Sum: " + sum);
+    }
+}
+
+------------------------------------------------------
+class SumNumbers
+{
+    public static void main(String[] args)
+    {
+        int sum = 0;
+         int i=1;                       initialization
+         while(i<=10)                while (Condition)
+           {                            {
+              sum=sum+i;                  BODY OF the loop
+              i++;                         }
+            }
+       
+System.out.println("Sum: " + sum);
+    }
+}
+
+class Table
+{
+    public static void main(String[] args)
+    {
+        Scanner console = new Scanner(System.in);
+        int num;
+        
+        System.out.print("Enter any positive integer: ");
+        num = console.nextInt();
+                
+        System.out.println("Multiplication Table of " + num);
+        
+        for(int i=1; i<=10; i++)
+        {
+            System.out.println(num +" x " + i + " = " + (num*i) );
+        }
+    }
+}
+
+class FactorialDemo1
+{
+    public static void main(String[] args)
+    {
+        Scanner console = new Scanner(System.in);
+        int num; // To hold number
+        int fact = 1; // To hold factorial
+        
+        System.out.print("Enter any positive integer: ");
+        num = console.nextInt();
+       
+        for(int i=1; i<=num; i++)
+        {
+            fact *= i;
+        }
+        
+        System.out.println("Factorial: "+ fact);
+    }
+} 
+
+class ReverseNumber
+{
+    public static void main(String[] args)
+    {
+        Scanner console = new Scanner(System.in);
+     
+        int number;
+        int reverse = 0;
+        
+        System.out.print("Enter the number ");
+        number = console.nextInt();
+        
+        int temp = number;
+        int remainder = 0;
+        
+        while(temp>0)
+        {
+	    remainder = temp % 10;
+	    reverse = reverse * 10 + remainder;
+            temp /= 10;
+        }
+
+        System.out.println("Reverse of " + number + " is " + reverse);
+    }
+}
+
+
+25-02-2022:
+
+Classes, Objects,Methods, Overloading [Polymorphism- Static, Dynamic]
+// Parameterised Method
+
+class Box {
+double width, height, depth;
+void volume(double w,double h,double d)
+ {
+   width=w;
+   height=h;
+   depth=d;
+System.out.print("Volume is ");
+System.out.println(width*height*depth);
+}
+}
+class BoxDemo
+{
+ public static void main(String arg[])
+   {
+     Box x1=new Box();
+     
+     x1.volume(3.2,33.2,34.2);    
+}
+}
+
+------------------------------------------------------------
+Write a program to find out discriminant of quaratic equation by defining a method:
+
+------------------------------------------------------
+class Box {
+double width, height, depth;
+double volume()
+ { 
+ return width*height*depth;
+}
+}
+class BoxDemo
+{
+ public static void main(String arg[])
+   {
+     Box x1=new Box();
+     x1.width=21.1;
+     x1.height=2.5;
+     x1.depth=51.5;
+     x1.volume(); 
+}
+}
+---------------------------------------------------------
+class Box {
+double width,height,depth;
+Box( ) {
+System.out.println("Constructing Box");
+width = 10; height = 10; depth = 10;
+}
+double volume() {
+return width * height * depth;
+}
+}
+class BoxDemo
+{
+ public static void main(String arg[])
+   {
+     Box x1=new Box();
+      x1.volume(); 
+}
+}
+---------------------------------------------------------
+class Box {
+double width,height,depth;
+Box(double w,double h,double d) 
+{
+System.out.println("Constructing Box");
+w = width; h = height; d = depth;
+}
+private double volume() {
+return width * height * depth;
+}
+}
+class BoxDemo
+{
+ public static void main(String arg[])
+   {
+     Box x1=new Box(2.3,3.1,5.2);
+      x1.volume(); 
+}
+}
+______________________________________________________________________________
+28-02-2022:
+
+Classess
+Objects
+Methods - Parameterised method
+Constructor - Parameterised constructor
+Access Specifiers - Private, Public
+Data Hiding
+Encapsulation
+
+
+Polymorphism:  Static Polymorphism, Dynamic Polymorphism
+
+
+
+   
+
+  // Method Signature
+class OverloadDemo {  
+public void test() {
+System.out.println("No parameters");
+}
+public void test(int a) {
+System.out.println("a: " + a);
+}
+puiblic void test(double a) {
+System.out.println("a and b: " + a + " " + b);
+}
+public double test(double a) {
+System.out.println("double a: " + a); return a*a;
+}
+}
+class BoxDemo {
+public static void main(String args[]) {
+Overloaddemo o1 = new Overloaddemo();
+o1.test();
+o1.test(2);
+o1.test(3,4);
+o1.test(2.0);
+}  }
+_________________________________________________
+
+Write a program to overload a method called factorial:
+--------------------------------------------------------
+01-03-2022:
+
+1) Write a program for finding volume of a sphere using 
+method overloading:
+
+2) Write a program to find out area of a square using 
+method overloading:
+_________________________________________________________
+
+04-03-2022:
+
+Access Control, Data hiding, Encapsultion,
+Inheritance:
+
+class Base      // Base class or super class
+{
+  int a=4,b=5,c;
+void add()
+{
+c=a+b;
+System.out.println(c);
+}
+}
+public class Derived1 extends Base     // Derived class  or sub class
+{                                      // Single Inheritance
+void sub()
+{
+  c=a-b;
+	  System.out.println(c);
+}
+}
+class Derived2 extends Derived1   // Multilevel Inheritance
+{
+public void mul()
+{
+ c=a*b;
+System.out.println(c);
+}
+}
+class Maindemo
+{
+public static void main(String args[])
+{
+ Derived2 obj = new Derived2();
+  obj.add();
+obj.sub();
+obj.mul();
+}
+}
+----------------------------------------------------
+Method Overriding [Dynamic Polymorphism]:
+
+class First
+{
+int a=10,b=20,c;
+ public void add()
+  {
+   c=a+b;
+   System.out.println(c);
+   }
+}
+class Second extends First
+{
+ public void add(int x,int y)    // Overriding [Redefining]
+   {
+    c=x-y;
+    System.out.println(c);
+   }
+}
+class Third 
+{
+ public static void main(String args[])
+ {
+  Second obj=new Second();
+   obj.add();
+   obj.add(5,4);
+}
+}
+_______________________________________________________
+Super Keyword:
+
+class Box {  
+private double width;  
+private double height; 
+ private double depth; 
+Box(Box ob)         // object as parameter
+{ 
+// pass object to constructor    
+width = ob.width;    
+height = ob.height;    
+depth = ob.depth;  
+  } 
+ Box(double w, double h, double d)  //constructor Overloading
+ {    
+width = w;    
+height = h;    
+depth = d; 
+ }  
+double volume()
+ {    
+return width * height * depth; 
+ }
+}
+
+class BoxWeight extends Box 
+{  
+double weight; // weight of box  
+BoxWeight(Box ob)
+ {
+ // pass object to constructor    
+super(ob); 
+ }
+}
+public class MainEx 
+{  
+public static void main(String args[]) 
+{    
+Box mybox1 = new Box(10, 20, 15);
+BoxWeight myclone = new BoxWeight(mybox1);    
+double vol;     
+vol = mybox1.volume();   
+System.out.println("Volume of mybox1 is " + vol);  }
+}
+-------------------------------------------------------------
+12-03-2022:
+Arrays:
+
+int a[]=new int[12];
+
+class ArrayEx
+{
+public static void main(String args[])
+{
+int i;
+int a[]=new int[10];
+Scanner obj=new Scanner(System.in);
+System.out.prinltn("Enter the elements:")
+for(i=0;i<10;i=i+1)                      //Input
+  {
+   a[i]=obj.nextInt();         
+    }
+System.out.println("Elements from the array are:")
+  for(i=0;i<10;i=i+1)               //Displaying output
+  {
+   System.out.println(a[i]);         
+    }
+}
+}
+___________________________________________________
+public class Sum 
+{
+  public static void main(String[] args) 
+  {
+  int[] x = new int [101];
+  for (int i = 0; i<x.length; i++ )
+  x[i] = i;                                 x[0]=0 
+  int sum = 0;
+  for(int i = 0; i<x.length; i++)
+  sum =sum + x[i];                        sum=1 + 2 =3	
+  System.out.println(sum);
+  }
+}
+_____________________________________________________
+ 3 X 3
+
+                 1(0,0)     3(0,1)      4(0,2)
+   
+                 2(1,0)     4(1,1)      5(1,2)
+
+		 3(2,0)     6(2,1)      8(2,2)
+
+
+---------------------------------------------------------
+ 14-03-2022
+ Interfaces:
+
+   behaviour and attributes 
+
+interface First
+{
+static final int a=10;
+static final int b=10;
+ void add(int,int);  //abstract
+ void sub(int);
+void mul();
+ 
+}
+ 
+class Second implements First
+{
+ void add(int a,int b) //definition
+    {
+    c=a+b;
+    }
+}
+class Third implements First
+{
+ void sub(int a)
+  {
+   c=a-b;
+    }
+}
+
+class MainEx
+{
+  public static void main(String args[])
+   {
+    Second obj1=new Second();   // Instantiation
+    Third obj2=new Third();
+     obj1.add(2,3);
+     obj2.sub(4);
+}
+}
+
+______________________________________________________
+21-03-2022:
+Abstract Class 
+
+abstract class First
+{  int c,a,b;
+ public void add();  //abstract method
+public void sub()    // Non-abstract method
+{
+  c=a-b;
+}
+class Second extends First
+ {
+  public void add()
+{
+  c=a+b;
+}
+}
+class MainEx
+{
+public static void main(String args[])
+{
+Second obj=new Second();
+obj.add();
+obj.sub();
+}
+}
+
+Datatypes in Java:
+int, Double, Boolean, float, char,byte.
+
+String :
+     '+' Concatenation operator used to join two or more strings.
+System.out.println("Enter"+n+"Value"):
+System.out.println("ENter a value"+43);
+__________________________________________________________
+11-04-2022:
+Exception handling
+
+i) Syntax error :  or Compile-time errors
+
+        class Mainex
+         {
+          public static void main(String args[])
+          {
+            System.out.println("VIT)
+             }
+         }
+
+ii) Run-time errors or dynamic errors:
+
+      java classname
+     
+        Arithmetic Exception [Runtime error]
+
+        Terminated abnormally
+
+       class MainEx
+       {
+        public static void main(String args[])
+         {
+            int a=10,b=0,c;
+            c=a/b;
+             System.out.println("C value is "+c);
+           }
+       }
+
+iii) Logical error:
+ 
+     for(i=11;i<10;i++)
+      {
+       System.out.prinltn(i);
+      }
+
+
+ import java.io.Exception;
+   
+// Demomnstration on Arithmetic Exception
+ class MainEx
+       {
+        public static void main(String args[])
+         {
+            int a=10,b=2,c;
+          try
+            {
+            c=a/b;
+             System.out.println("C value is "+c);
+           }
+          catch(ArithmeticException e)
+            {
+             System.out.println("Arithmetic calculation error");0
+       }
+}
+____________________________________________________
+
+// Demonstration on ArrayIndexOutOfBoundException
+
+class ArrayEx
+{
+   public static void main(String args[])
+    {
+      int a[]= new int[5];
+      Scanner obj=new Scanner();
+     try{
+      for(i=0;i<6;i++)
+       {
+         a[i]=obj.nextInt();
+        }
+      for(i=0;i<6;i++)
+       {
+         System.out.println(a[i]);
+        }
+       }
+       catch(ArrayIndexOutOfBoundException e)
+          {
+         System.out.println("ArrayIndex exception");
+           }
+    }
+ }
+________________________________________________________________
+import java.io.*;
+class Exep extends Exception
+{
+  static void validate(int age) throws InvalidAgeException
+{
+   if(age<18)
+     throw new InvalidAgeException(“ not valid”);
+   else 
+System.out.println(“ Welcome to vote”);
+}
+}
+class Ex1
+{
+Public static void main(String args[])
+{ 
+  try{
+ validate(12);
+} catch(Exception m)
+{System.out.println(“Exception occurred”);
+}
+System.out.println(“rest of the code”);
+} }
+
+-_______________________________________________________
+25-04-2022: Multithreading
+
+Class A extends Thread
+{
+public void run()  //overrding [java.lang package]
+{
+for(int i=0;i<5;i++)
+  {
+    S.o.p(i);
+   }
+   S.o.p("Exit from thread A");
+}
+Class B extends Thread
+{
+public void run()
+{
+for(int j=0;j<5:j++)
+  {
+    S.o.p(j);
+   }
+   S.o.p("Exit from thread B");
+}
+Class C extends Thread
+{
+public void run()
+{
+for(int k=0;k<5;k++)
+  {
+    S.o.p(k);
+   }
+   S.o.p("Exit from thread C");
+}
+
+class ThreadEx
+{
+public static void main(String a[])
+ {
+   A obj1=new A();
+    obj1.start();
+
+   B obj2=new B();
+    obj2.start();
+
+   C obj3=new C();
+    obj3.start();
+}
+}
+-------------------------------------------------------------
+                     29-04-2022 : Strings
+import java.lang.*;
+class Strex
+{
+  public static void main(String args[])
+   {
+     String greetings = "Vit University";
+     int a=greetings.();
+    }
+}
+_____________________________________
+import java.lang.*;
+class Strex1
+{
+public static void main(String args[])
+{ 
+   String g1="vit";
+    g1.charAt(3);
+}
+}
+
+
+
+
+
+
